@@ -1,0 +1,516 @@
+/**************************************************/
+/* Le reset CSS                                   */
+/**************************************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**************************************************/
+/* Propriétés personnalisées                      */
+/**************************************************/
+
+:root {
+    /* Propriétés theme */
+    --color-heading: #88291B;
+    --color-menu: #f2dede;
+    --color-bg-btn: #88291B;
+    --color-text-btn: #f8f6f6;
+    --color-text-menu: #a94442;
+    --color-bg-hover: #f17436;
+    /* --color-bg-hover: #FFA500; */
+    --color-text-hover: #f8f6f6;
+    /* Propriétés globales */
+    --color-text: #222c33;
+    --color-user: #9c677f;
+    --color-link: #31708f;
+    --color-bordor: #e6ded9;
+    --color-box-shadow: #9c677f;
+    --font-heading: "Halant", serif;
+    --font-text: "Nunito Sans", sans-serif;
+    --font-size: 1.5rem;
+    --line-height: 1.5;
+    --main-width: 80vw;
+}
+
+/**************************************************/
+/* Régles générales                               */
+/**************************************************/
+
+a {
+    text-decoration: none;
+}
+
+a.btn,
+li > a {
+    display: inline-block;
+}
+
+li > a {
+    color: inherit;
+}
+
+ul {
+     list-style: none;
+}
+
+input[type="submit"] {
+    all: unset;
+}
+
+/* img {
+    display: block;
+    max-width: 100%;
+} */
+
+/**************************************************/
+/* Typographie                                    */
+/**************************************************/
+
+html {
+    font-family: var(--font-text);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--color-text);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    color : var(--color-heading);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    /* color: var(--color-bg-hover); */
+}
+
+p,
+span {
+    line-height: 2;
+}
+
+/* Adaptation de la taille de police */
+
+@media (min-width: 300px) {
+    :root {
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 350px) {
+    :root {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 520px) {
+    :root {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1121px) {
+    :root {
+        font-size: 1.1rem;
+    }
+}
+
+/**************************************************/
+/* Rythme et dimensions                           */
+/**************************************************/
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    flex-shrink: 0;
+}
+
+main {
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--main-width);
+    min-width: var(--main-width);
+    padding: 2em 0 1.75em;
+}
+
+footer {
+    flex-shrink: 0;
+    height: 5em;
+    padding: 0.5em;
+    background-color: var(--color-menu);
+    color: var(--color-text-menu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p + p {
+    margin-top: 0.50em;
+}
+
+* + .container {
+    margin-top: 1em;
+}
+
+.container > *:not(:nth-child(1)) {
+    margin-top: 0.5em;
+}
+
+.container > .validation {
+    margin: 0.75em 0;
+}
+
+form .container {
+    margin: 1em 0;
+}
+
+/**************************************************/
+/* Styles particuliers                            */
+/**************************************************/
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Pas pour le premier div ayant la classe article */
+.article:not(:first-of-type) {
+    border-top: 2px solid var(--grey);
+    padding-top: 0.5em;
+}
+
+.user {
+    color : var(--color-user);
+}
+
+.content {
+    border: 1px solid var(--color-bordor);
+    border-radius: 5px;
+    padding: 0.75em;
+}
+
+/**************************************************/
+/* Entête de page                                 */
+/**************************************************/
+
+header * {
+    margin: 0;
+}
+
+header > div {
+    padding: 0 1em;
+}
+
+.title-bar,
+.menu-bar {
+    height : 3.5rem;
+}
+
+.title-bar  *,
+.menu-bar > * {
+    flex-basis : calc(100% / 2);
+}
+
+.title-bar > .grid,
+.menu-bar > .grid {
+    padding: 0.5em 0;
+    justify-content: flex-end;
+}
+
+.title-bar > .user > span {
+    max-width: max-content;
+    padding: 0 1em;
+}
+
+.menu-bar {
+    background-color: var(--color-menu);
+}
+
+.menu-bar > nav {
+    padding: 0.5em 0;
+}
+
+.menu-bar > form > * {
+    margin-left: 1em;
+}
+
+.menu-bar > form > input[type="text"] {
+    min-width: 40ch;
+}
+
+/**************************************************/
+/* Navigation                                     */
+/**************************************************/
+
+nav > ul {
+    display: flex;
+}
+
+nav > ul > li {
+    margin-right: 1.5em;
+    margin-top: 0;
+}
+
+nav a {
+    color: var(--color-text-menu);
+    height: 100%;
+    padding: 0.5em 1em;
+    min-width: max-content;
+}
+
+nav a:hover {
+    background-color: var(--color-bg-btn);
+    color: var(--color-text-btn);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+}
+
+/**************************************************/
+/* Formulaires                                    */
+/**************************************************/
+
+.form {
+    margin: auto;
+}
+
+.login-title {
+    text-align: center;
+}
+
+.form.login {
+    width: 30vw;
+}
+
+.form .container > * {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.form .container label {
+    margin-bottom: 0;
+}
+
+.form .container label + * {
+    margin-top: 0.5em;
+}
+
+.form .validation {
+    text-align: right;
+}
+
+.recherche-form-page {
+    margin: 0.75em 0;
+}
+
+.recherche-form-page > input {
+    flex-grow: 1;
+}
+
+.recherche-form-page > .validation {
+    padding-left: 0.75em;
+    max-width: max-content;
+}
+
+/**************************************************/
+/* Esthetique des boutons                         */
+/**************************************************/
+
+.btn,
+.btn-small,
+input[type="submit"] {
+    font-family: inherit;
+    color: var(--color-text-btn);
+    background-color: var(--color-bg-btn);
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px var(--color-box-shadow);
+}
+
+.btn, input[type="submit"] {
+    font-size: 1rem;
+    max-width: max-content;
+    padding: 0.5em 1em;
+}
+
+.btn-small {
+    font-size: 0.9rem;
+    max-width: fit-content;
+    padding: 0.25em 0.5em;
+}
+
+.btn:hover,
+.btn-small:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-hover);
+    cursor: pointer;
+}
+
+.link {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--color-link);
+    text-decoration: underline;
+    width: max-content;
+    cursor: pointer;
+}
+
+.link:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/**************************************************/
+/* Esthetique des champs                          */
+/**************************************************/
+
+label {
+    color: var(--color-heading);
+}
+
+input:not([type="submit"]),
+textarea {
+    font-size: 1rem;
+    font-family: var(--font-text);
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid var(--color-bordor);
+    outline: none;
+}
+
+textarea {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+input::placeholder {
+    color: lightgrey;
+    opacity: 1; /* Firefox */
+}
+
+/* Internet Explorer 10-11 */
+input:-ms-input-placeholder {
+    color: lightgrey;
+}
+
+/* Microsoft Edge */
+input::-ms-input-placeholder {
+    color: lightgrey;
+}
+
+input:not(input[type="submit"]):focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 1px 2px var(--color-box-shadow);
+}
+
+/* Classe appliquée sur les labels cachés pour respecter les régles de l'accessibilité */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/**************************************************/
+/* Alertes                                        */
+/**************************************************/
+
+.alert {
+    display: block;
+    padding: 0.5em;
+    margin: 1em 0 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.alert .alert-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.alert .alert-link:hover,
+.alert .alert-link:focus {
+    text-decoration: none;
+}
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.alert-success .alert-link {
+    color: #2b542c;
+}
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+.alert-info .alert-link {
+    color: #31708f;
+}
+
+.alert-error {
+    background-color: #f7bfa2;
+    border-color: #f17436;
+    color: #88291B;
+}
+
+.alert-error .alert-link {
+    color: #31708f;
+}
+
+/* .alert-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+}
+
+.alert-warning hr {
+    border-top-color: #f7e1b5;
+}
+
+.alert-warning .alert-link {
+    color: #66512c;
+}
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+
+.alert-error .alert-link {
+    color: #843534;
+} */
